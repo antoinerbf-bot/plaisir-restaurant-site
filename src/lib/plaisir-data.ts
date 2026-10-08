@@ -73,12 +73,12 @@ export const hoursSpec = [
   { days: [5, 6], open: "18:00", close: "22:00" },
 ];
 
-export const hoursDisplay = [
+export const hoursDisplay: { fr: string; en: string; hours: string | null }[] = [
   { fr: "Mardi & mercredi", en: "Tuesday & Wednesday", hours: "19:00 — 21:30" },
   { fr: "Jeudi", en: "Thursday", hours: "12:00 — 14:00  /  19:00 — 21:30" },
   { fr: "Vendredi", en: "Friday", hours: "12:00 — 14:00  /  18:00 — 22:00" },
   { fr: "Samedi", en: "Saturday", hours: "18:00 — 22:00" },
-  { fr: "Dimanche & lundi", en: "Sunday & Monday", hours: null as string | null },
+  { fr: "Dimanche & lundi", en: "Sunday & Monday", hours: null },
 ];
 
 export const copy = {
@@ -165,7 +165,7 @@ export const schemaOrg = {
   servesCuisine: ["Belgian", "French"],
   priceRange: "€€",
   acceptsReservations: true,
-  hasMenu: `${siteUrl}/#carte`,
+  hasMenu: siteUrl + "/#carte",
   sameAs: [socials.instagram, socials.facebook],
   openingHoursSpecification: [
     { "@type": "OpeningHoursSpecification", dayOfWeek: ["Tuesday", "Wednesday"], opens: "19:00", closes: "21:30" },
