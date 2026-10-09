@@ -25,10 +25,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: siteUrl },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [
-      { rel: "canonical", href: siteUrl },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" },
-    ],
+    links: [{ rel: "canonical", href: siteUrl }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(schemaOrg) }],
   }),
   component: Home,
@@ -93,22 +90,22 @@ function Home() {
 
   return (
     <main id="haut" className="min-h-screen bg-cream text-wine antialiased">
-      <header className={`fixed inset-x-0 top-0 z-40 transition-colors duration-200 ${scrolled ? "border-b border-wine/10 bg-cream/95 backdrop-blur-sm" : "bg-transparent"}`}>
+      <header className={`fixed inset-x-0 top-0 z-40 transition-colors duration-200 ${scrolled ? "border-b border-wine/10 bg-cream/95 text-wine backdrop-blur-sm" : "bg-transparent text-cream"}`}>
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-5 md:h-16 md:px-8">
-          <a href="#haut" className="font-display text-xl tracking-tight text-wine">Plaisir</a>
+          <a href="#haut" className="font-display text-xl tracking-tight">Plaisir</a>
           <nav className="hidden items-center gap-7 md:flex" aria-label="Navigation">
             {t.nav.map((label, i) => (
-              <a key={sections[i]} href={`#${sections[i]}`} className="text-[13px] text-wine/70 transition-colors hover:text-wine">{label}</a>
+              <a key={sections[i]} href={`#${sections[i]}`} className={`text-[13px] transition-colors ${scrolled ? "text-wine/70 hover:text-wine" : "text-cream/80 hover:text-cream"}`}>{label}</a>
             ))}
           </nav>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1 text-[12px] font-medium" aria-label="Language">
-              <button type="button" className={`px-1 ${lang === "fr" ? "text-wine" : "text-wine/40"}`} onClick={() => setLang("fr")} aria-pressed={lang === "fr"}>FR</button>
-              <span className="text-wine/25">/</span>
-              <button type="button" className={`px-1 ${lang === "en" ? "text-wine" : "text-wine/40"}`} onClick={() => setLang("en")} aria-pressed={lang === "en"}>EN</button>
+              <button type="button" className={`px-1 ${lang === "fr" ? (scrolled ? "text-wine" : "text-cream") : (scrolled ? "text-wine/40" : "text-cream/45")}`} onClick={() => setLang("fr")} aria-pressed={lang === "fr"}>FR</button>
+              <span className={scrolled ? "text-wine/25" : "text-cream/30"}>/</span>
+              <button type="button" className={`px-1 ${lang === "en" ? (scrolled ? "text-wine" : "text-cream") : (scrolled ? "text-wine/40" : "text-cream/45")}`} onClick={() => setLang("en")} aria-pressed={lang === "en"}>EN</button>
             </div>
-            <Button onClick={openBook} className="hidden h-9 rounded-sm bg-wine px-4 text-[12px] font-medium text-cream shadow-none hover:bg-teal md:inline-flex">{t.reserve}</Button>
-            <button type="button" className="text-wine md:hidden" onClick={() => setMobileMenu(true)} aria-label={t.menuToggle}><MenuIcon size={20} /></button>
+            <Button onClick={openBook} className={`hidden h-9 rounded-sm px-4 text-[12px] font-medium shadow-none md:inline-flex ${scrolled ? "bg-wine text-cream hover:bg-teal" : "bg-cream text-wine hover:bg-white"}`}>{t.reserve}</Button>
+            <button type="button" className="md:hidden" onClick={() => setMobileMenu(true)} aria-label={t.menuToggle}><MenuIcon size={20} /></button>
           </div>
         </div>
       </header>
