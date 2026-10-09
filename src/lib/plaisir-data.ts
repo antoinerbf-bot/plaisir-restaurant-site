@@ -353,9 +353,18 @@ export const copy = {
 };
 
 export function isOpenNow() {
-  const now = new Date();
-  const day = now.getDay();
-  const mins = now.getHours() * 60 + now.getMinutes();
+  // Europe/Brussels wall-clock time
+  const fmt = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Brussels",
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+  const parts = Object.fromEntries(fmt.formatToParts(new Date()).map((p) => [p.type, p.value]));
+  const dayMap: Record<string, number> = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+  const day = dayMap[parts.weekday] ?? new Date().getDay();
+  const mins = Number(parts.hour) * 60 + Number(parts.minute);
   for (const slot of hoursSpec) {
     if (!slot.days.includes(day)) continue;
     const [oh, om] = slot.open.split(":").map(Number);
