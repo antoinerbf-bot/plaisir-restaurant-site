@@ -128,7 +128,15 @@ function Home() {
 
       <section className="relative">
         <div className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/10] md:aspect-[21/9] md:max-h-[78vh]">
-          <img src={interiorImg} alt={gallery[0][lang]} className="absolute inset-0 h-full w-full object-cover" width={1600} height={901} fetchPriority="high" />
+          <img
+            src={interiorImg}
+            alt={gallery[0][lang]}
+            className="absolute inset-0 h-full w-full object-cover object-[center_40%]"
+            width={1600}
+            height={901}
+            fetchPriority="high"
+            decoding="async"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-wine/75 via-wine/25 to-wine/10" />
         </div>
         <div className="absolute inset-x-0 bottom-0 px-5 pb-10 md:px-8 md:pb-14">
@@ -266,6 +274,24 @@ function Home() {
               <a href={socials.instagram} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-wine/70 underline-offset-4 hover:text-wine hover:underline"><Instagram size={15} />Instagram</a>
               <a href={socials.facebook} target="_blank" rel="noreferrer" className="text-wine/70 underline-offset-4 hover:text-wine hover:underline">Facebook</a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-wine/8 bg-white" aria-label="Carte">
+        <div className="mx-auto max-w-6xl px-5 py-10 md:px-8 md:py-12">
+          <p className="mb-4 text-[12px] font-medium uppercase tracking-[0.12em] text-wine/45">
+            {lang === "fr" ? "Sur la carte" : "On the map"}
+          </p>
+          <div className="overflow-hidden rounded-sm border border-wine/10">
+            <iframe
+              title={lang === "fr" ? "Restaurant Plaisir sur Google Maps" : "Restaurant Plaisir on Google Maps"}
+              src="https://www.google.com/maps?q=Restaurant+Plaisir+Chemin+du+Gros+Tienne+1+1380+Lasne&output=embed"
+              className="h-56 w-full border-0 grayscale-[30%] contrast-[1.05] md:h-72"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
           </div>
         </div>
       </section>
