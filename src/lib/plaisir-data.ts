@@ -1,8 +1,12 @@
-import interior from "@/assets/plaisir-interieur.jpg.asset.json";
 import beef from "@/assets/beef-hero.jpg";
 import octopus from "@/assets/octopus.jpg";
 import egg from "@/assets/egg.jpg";
 import cookie from "@/assets/cookie.jpg";
+
+export const interiorImg =
+  "https://plaisir-restaurant-site.lovable.app/__l5e/assets-v1/1d6c63bf-648d-4ab4-b524-d66b7aab3602/plaisir-interieur.jpg";
+export const logoImg =
+  "https://plaisir-restaurant-site.lovable.app/__l5e/assets-v1/72b2a869-9090-46bc-9560-985a4e7ab28c/plaisir-logo.png";
 
 export const phone = "+32492613809";
 export const phoneDisplay = "+32 492 61 38 09";
@@ -179,7 +183,11 @@ export const signatures = [
 ];
 
 export const gallery = [
-  { src: interior.url, fr: "L’intérieur du restaurant Plaisir à Lasne", en: "Inside Restaurant Plaisir in Lasne" },
+  {
+    src: interiorImg,
+    fr: "L’intérieur du restaurant Plaisir à Lasne",
+    en: "Inside Restaurant Plaisir in Lasne",
+  },
   { src: beef, fr: "Joue de bœuf confite 18 heures", en: "18-hour braised beef cheek" },
   { src: octopus, fr: "Poulpe frais grillé", en: "Fresh grilled octopus" },
   { src: egg, fr: "Œuf bio mollet", en: "Soft-boiled organic egg" },
@@ -214,23 +222,33 @@ export const copy = {
     heroKicker: "Restaurant · Lasne",
     heroTitle: "Plaisir",
     heroTagline: "Cuisine belgo-française, sans chichi.",
-    heroText: "Des assiettes généreuses, trois salons intimistes, et l’envie de bien recevoir. Patrick Ridremont & le chef Tristan Petiaux.",
+    heroText:
+      "Des assiettes généreuses, trois salons intimistes, et l’envie de bien recevoir. Patrick Ridremont & le chef Tristan Petiaux.",
     explore: "Voir la carte",
     scroll: "Descendre",
     introEyebrow: "La maison",
     introTitle: "Une bâtisse louisianaise, une cuisine canaille.",
-    introText: "Ici on mijote, on nappe, on éponge le fond d’assiette. Tristan Petiaux tient les fourneaux — cuissons lentes, sauces franches. Patrick Ridremont tient la maison. Trois salons de douze couverts, lumière chaude, banquettes orange.",
+    introText:
+      "Ici on mijote, on nappe, on éponge le fond d’assiette. Tristan Petiaux tient les fourneaux — cuissons lentes, sauces franches. Patrick Ridremont tient la maison. Trois salons de douze couverts, lumière chaude, banquettes orange.",
     introQuote: "On n’y trouve pas des demi-plats.",
     menuEyebrow: "À table",
     menuTitle: "La carte",
-    menuText: "Entrées autour de 20 €, plats autour de 30 €. On peut aussi juste passer pour un cocktail.",
-    categories: { starters: "Entrées", mains: "Plats", desserts: "Desserts", cocktails: "Cocktails", menus: "Menus" },
+    menuText:
+      "Entrées autour de 20 €, plats autour de 30 €. On peut aussi juste passer pour un cocktail.",
+    categories: {
+      starters: "Entrées",
+      mains: "Plats",
+      desserts: "Desserts",
+      cocktails: "Cocktails",
+      menus: "Menus",
+    },
     menuNote: "Prix indicatifs — la carte évolue selon les arrivages.",
     signaturesEyebrow: "Quelques assiettes",
     signaturesTitle: "Ce qu’on commande souvent.",
     galleryEyebrow: "Le lieu",
     galleryTitle: "Trois salons, une terrasse.",
-    galleryText: "Décor pensé comme un film : plafond orange, bleu canard, lumière douce. Pas un showroom — une vraie salle où l’on reste.",
+    galleryText:
+      "Décor pensé comme un film : plafond orange, bleu canard, lumière douce. Pas un showroom — une vraie salle où l’on reste.",
     practicalEyebrow: "Infos pratiques",
     practicalTitle: "Venir à Plaisir",
     address: "Adresse",
@@ -258,7 +276,8 @@ export const copy = {
     bookMessage: "Message (optionnel)",
     bookSubmit: "Envoyer la demande",
     bookSuccess: "Demande envoyée",
-    bookSuccessText: "Votre client mail s’ouvre avec le détail. On vous rappelle pour confirmer. À bientôt.",
+    bookSuccessText:
+      "Votre client mail s’ouvre avec le détail. On vous rappelle pour confirmer. À bientôt.",
     bookNote: "Ou appelez directement",
     capacity: "36 couverts",
     cuisine: "Belgo-française",
@@ -270,23 +289,33 @@ export const copy = {
     heroKicker: "Restaurant · Lasne",
     heroTitle: "Plaisir",
     heroTagline: "Belgian-French cooking, no fuss.",
-    heroText: "Generous plates, three small rooms, and a proper welcome. Patrick Ridremont & chef Tristan Petiaux.",
+    heroText:
+      "Generous plates, three small rooms, and a proper welcome. Patrick Ridremont & chef Tristan Petiaux.",
     explore: "See the menu",
     scroll: "Scroll",
     introEyebrow: "The house",
     introTitle: "A Louisiana house, unfussy cooking.",
-    introText: "Slow cooks, proper sauces, plates you finish. Tristan Petiaux in the kitchen. Patrick Ridremont at the front. Three rooms of twelve, warm light, orange banquettes.",
+    introText:
+      "Slow cooks, proper sauces, plates you finish. Tristan Petiaux in the kitchen. Patrick Ridremont at the front. Three rooms of twelve, warm light, orange banquettes.",
     introQuote: "No half portions here.",
     menuEyebrow: "At the table",
     menuTitle: "The menu",
-    menuText: "Starters around €20, mains around €30. Or just a cocktail on the terrace.",
-    categories: { starters: "Starters", mains: "Mains", desserts: "Desserts", cocktails: "Cocktails", menus: "Set menus" },
+    menuText:
+      "Starters around €20, mains around €30. Or just a cocktail on the terrace.",
+    categories: {
+      starters: "Starters",
+      mains: "Mains",
+      desserts: "Desserts",
+      cocktails: "Cocktails",
+      menus: "Set menus",
+    },
     menuNote: "Indicative prices — the menu shifts with the market.",
     signaturesEyebrow: "A few plates",
     signaturesTitle: "What people order again.",
     galleryEyebrow: "The place",
     galleryTitle: "Three rooms, a terrace.",
-    galleryText: "Cinematic rooms: orange ceiling, teal walls, soft light. Not a showroom — a room you stay in.",
+    galleryText:
+      "Cinematic rooms: orange ceiling, teal walls, soft light. Not a showroom — a room you stay in.",
     practicalEyebrow: "Practical",
     practicalTitle: "Finding us",
     address: "Address",
@@ -314,7 +343,8 @@ export const copy = {
     bookMessage: "Message (optional)",
     bookSubmit: "Send request",
     bookSuccess: "Request sent",
-    bookSuccessText: "Your email client opens with the details. We’ll call you back to confirm. See you soon.",
+    bookSuccessText:
+      "Your email client opens with the details. We’ll call you back to confirm. See you soon.",
     bookNote: "Or call us",
     capacity: "36 seats",
     cuisine: "Belgian-French",
@@ -348,7 +378,7 @@ export const schemaOrg = {
   alternateName: "Plaisir Lasne",
   description:
     "Restaurant de cuisine belgo-française à Lasne. Assiettes généreuses, trois salons intimistes. Chef Tristan Petiaux & Patrick Ridremont.",
-  image: [interior.url],
+  image: [interiorImg],
   telephone: phone,
   email,
   url: siteUrl,
@@ -367,11 +397,36 @@ export const schemaOrg = {
   hasMenu: `${siteUrl}/#carte`,
   sameAs: [socials.instagram, socials.facebook],
   openingHoursSpecification: [
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Tuesday", "Wednesday"], opens: "19:00", closes: "21:30" },
-    { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "12:00", closes: "14:00" },
-    { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "19:00", closes: "21:30" },
-    { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "12:00", closes: "14:00" },
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Friday", "Saturday"], opens: "18:00", closes: "22:00" },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Tuesday", "Wednesday"],
+      opens: "19:00",
+      closes: "21:30",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Thursday",
+      opens: "12:00",
+      closes: "14:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Thursday",
+      opens: "19:00",
+      closes: "21:30",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Friday",
+      opens: "12:00",
+      closes: "14:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Friday", "Saturday"],
+      opens: "18:00",
+      closes: "22:00",
+    },
   ],
   menu: {
     "@type": "Menu",
