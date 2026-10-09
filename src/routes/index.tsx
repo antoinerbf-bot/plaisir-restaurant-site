@@ -263,7 +263,7 @@ function Home() {
               {hoursDisplay.map((row) => (
                 <div key={row.fr} className="grid grid-cols-[1fr_auto] gap-4 border-b border-wine/10 py-3.5 text-sm">
                   <span className="font-medium text-wine">{row[lang]}</span>
-                  <span className={row.hours ? "text-wine/55" : "font-medium text-wine/35">{row.hours ?? t.closed}</span>
+                  <span className={row.hours ? "text-wine/55" : "font-medium text-wine/35"}>{row.hours ?? t.closed}</span>
                 </div>
               ))}
             </div>
