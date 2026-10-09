@@ -5,10 +5,8 @@ import {
   Clock, Instagram, MapPin, Menu as MenuIcon, Phone, Users, X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/plaisir-logo.png.asset.json";
-import interior from "@/assets/plaisir-interieur.jpg.asset.json";
 import {
-  phone, phoneDisplay, maps, socials, siteUrl,
+  phone, phoneDisplay, maps, socials, siteUrl, interiorImg, logoImg,
   dishes, signatures, gallery, hoursDisplay, copy, isOpenNow, schemaOrg,
   type Lang, type Category,
 } from "@/lib/plaisir-data";
@@ -23,7 +21,7 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Cuisine belgo-française généreuse. Réserver à Lasne." },
       { property: "og:type", content: "restaurant" },
       { property: "og:url", content: siteUrl },
-      { property: "og:image", content: interior.url },
+      { property: "og:image", content: interiorImg },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#2a241f" },
     ],
@@ -92,7 +90,7 @@ function Home() {
 
   return (
     <main id="haut" className="min-h-screen bg-cream text-wine antialiased">
-      <a href="#histoire" className="skip-link">{(t as any).skipToContent || "Aller au contenu"}</a>
+      <a href="#histoire" className="skip-link">{t.skipToContent}</a>
       <header className={`fixed inset-x-0 top-0 z-40 transition-colors duration-200 ${scrolled ? "border-b border-wine/10 bg-cream/95 text-wine backdrop-blur-sm" : "bg-transparent text-cream"}`}>
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-5 md:h-16 md:px-8">
           <a href="#haut" className="font-display text-xl tracking-tight">Plaisir</a>
@@ -130,7 +128,7 @@ function Home() {
 
       <section className="relative">
         <div className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/10] md:aspect-[21/9] md:max-h-[78vh]">
-          <img src={interior.url} alt={gallery[0][lang]} className="absolute inset-0 h-full w-full object-cover" width={1600} height={901} fetchPriority="high" />
+          <img src={interiorImg} alt={gallery[0][lang]} className="absolute inset-0 h-full w-full object-cover" width={1600} height={901} fetchPriority="high" />
           <div className="absolute inset-0 bg-gradient-to-t from-wine/75 via-wine/25 to-wine/10" />
         </div>
         <div className="absolute inset-x-0 bottom-0 px-5 pb-10 md:px-8 md:pb-14">
@@ -227,7 +225,7 @@ function Home() {
           </div>
           <div className="mt-10 grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-3">
             <button type="button" onClick={() => setLightbox(0)} className="group col-span-2 row-span-2 overflow-hidden" aria-label={gallery[0][lang]}>
-              <img src={interior.url} alt={gallery[0][lang]} loading="lazy" width={1600} height={901} className="aspect-[4/3] h-full w-full object-cover opacity-95 transition-opacity group-hover:opacity-100 md:min-h-[360px]" />
+              <img src={interiorImg} alt={gallery[0][lang]} loading="lazy" width={1600} height={901} className="aspect-[4/3] h-full w-full object-cover opacity-95 transition-opacity group-hover:opacity-100 md:min-h-[360px]" />
             </button>
             {gallery.slice(1).map((item, i) => (
               <button key={item.src} type="button" onClick={() => setLightbox(i + 1)} className="group overflow-hidden" aria-label={item[lang]}>
@@ -275,7 +273,7 @@ function Home() {
       <footer className="border-t border-wine/10 bg-wine px-5 py-12 text-cream md:px-8">
         <div className="mx-auto flex max-w-6xl flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <img src={logo.url} alt="Plaisir" className="h-auto w-28 object-contain brightness-0 invert opacity-90" width={160} height={32} />
+            <img src={logoImg} alt="Plaisir" className="h-auto w-28 object-contain brightness-0 invert opacity-90" width={160} height={32} />
             <p className="mt-3 text-[13px] text-cream/50">{t.footer}</p>
           </div>
           <div className="flex flex-wrap gap-6 text-[12px] text-cream/60">
